@@ -1,7 +1,5 @@
 #### 数字媒体前端组first-work
 
-![请允许我做个高兴的表情](http://img5.duitang.com/uploads/item/201511/21/20151121012742_SjJCF.jpeg)
-
 `布局方案`
 
 	1.左边固定，右边自适应
