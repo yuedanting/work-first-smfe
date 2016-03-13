@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>布局方案</title>
+	<link rel="stylesheet" href="layout.css">
+</head>
+<body>
+	<div class="dom1 wrapbox">
+		<div class="leftbox">
+			我是固定宽度
+		</div>
+		<div class="rightbox">
+			我是自适应
+		</div>
+	</div>
+
+	<div class="dom2 wrapbox">
+		<div class="leftbox">
+			我是固定宽度
+		</div>
+		<div class="rightbox">
+			<div class="small-box">
+				我是自适应
+			</div>
+		</div>
+	</div>
+
+	<div class="dom3 wrapbox flex">
+		<div class="leftbox">
+			我是固定宽度
+		</div>
+		<div class="rightbox">
+			<div class="small-box">
+				我是自适应
+			</div>
+		</div>
+	</div>
+
+	<div class="dom4 wrapbox">
+		<div class="leftbox">
+			我是固定宽度
+		</div>
+		<div class="rightbox">
+			我是固定宽度
+		</div>
+		<div class="content">
+			这种写法不好因为是我只要模块应该最先被渲染出来
+		</div>
+	</div>
+
+	<div class="dom5 wrapbox">
+		<div class="content">
+			最先被渲染出来
+		</div>
+		<div class="leftbox">
+			我是固定宽度
+		</div>
+		<div class="rightbox">
+			我是固定宽度
+		</div>
+	</div>
+
+	<div class="dom6 wrapbox flex">
+		<div class="leftbox">
+			我是固定宽度
+		</div>
+		<div class="content">
+			最先被渲染出来
+		</div>
+		<div class="rightbox">
+			我是固定宽度
+		</div>
+	</div>
+</body>
+</html>

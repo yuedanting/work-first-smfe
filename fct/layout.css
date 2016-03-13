@@ -1,0 +1,124 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+.wrapbox {
+	height: 200px;
+	background: #eee;
+	margin-bottom: 20px;
+	color:#fff;
+	text-align: center;
+	line-height: 200px;
+	position:relative;
+}
+
+.small-box {
+	height:100px;
+	width:100px;
+	background-color: red;
+	line-height: 100px;
+}
+
+/* 左侧固定右侧自适应 */
+
+.dom1 .leftbox{
+	width: 200px;
+	height:200px;
+	background-color: #000;
+	float: left;
+}
+.dom1 .rightbox {
+	background-color: yellow;
+	height:200px;
+	margin-left: 200px;
+}
+
+.dom2 .leftbox{
+	width: 200px;
+	height:200px;
+	background-color: #000;
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+.dom2 .rightbox {
+	background-color: yellow;
+	height:200px;
+	margin-left: 200px;
+}
+
+.dom3.flex {
+	display: flex;
+}
+.dom3 .leftbox{
+	width: 200px;
+	height:200px;
+	background-color: #000;
+}
+.dom3 .rightbox {
+	background-color: yellow;
+	height:200px;
+	flex:1
+}
+
+
+/* 中间固定 */
+
+.dom4 .leftbox{
+	width: 200px;
+	height:200px;
+	background-color: #000;
+	float:left;
+}
+.dom4 .content {
+	height:200px;
+	background-color: red;
+}
+.dom4 .rightbox {
+	background-color: yellow;
+	height:200px;
+	width: 200px;
+	float:right;
+}
+
+
+.dom5 .leftbox{
+	width: 200px;
+	height:200px;
+	background-color: #000;
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+.dom5 .content {
+	height:200px;
+	background-color: red;
+}
+.dom5 .rightbox {
+	background-color: yellow;
+	height:200px;
+	width: 200px;
+	position:absolute;
+	top:0px;
+	right:0px;
+}
+
+
+.dom6.flex {
+	display: flex;
+}
+.dom6 .leftbox{
+	width: 200px;
+	height:200px;
+	background-color: #000;
+}
+.dom6 .content {
+	height:200px;
+	background-color: red;
+	flex:1
+}
+.dom6 .rightbox {
+	background-color: yellow;
+	height:200px;
+	width: 200px;
+}
