@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>左边固定</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<style type="text/css">
+		html,body{
+			width: 100%;
+			height: 100%;
+		}
+		/*我是第一种*/
+		.a1{
+			height: 200px;
+			background-color: blue;
+			overflow: hidden;
+		}
+		.b1{
+		    height: 200px;
+		    color: #fff;
+		}
+		.left1{
+			float: left;
+			width: 200px;
+			background-color: red;
+		}
+		.right1{
+			background-color: green;
+			margin-left: 200px;/*==等于左边栏宽度==*/
+		}
+
+		/*我是第二种*/
+		.a2-content {
+			display: inline-block;
+			border-left: 200px solid green;/*==此值等于左边栏的宽度值==*/
+		}
+
+		.left2 {
+			float: left;
+			width: 200px;
+			margin-left: -200px;/*==此值等于左边栏的宽度值==*/
+			position: relative;	
+			background-color: green;		
+		}
+
+		.right2 {
+			float: left;
+			background-color: red;
+		}	
+
+		/*我是第三种*/
+		.left3{
+			background: red;
+			float: left;
+			width: 200px;
+			margin-bottom: -99999px;
+			padding-bottom: 99999px;
+
+		}
+		.right3{
+			background: green;
+			margin-left: 200px;/*==此值等于左边栏的宽度值==*/
+			margin-bottom: -99999px;
+			padding-bottom: 99999px;
+		}
+
+		/*我是第四种*/
+		.a4-content{
+			padding-left:200px;
+		}
+		.left4{
+		 	width:100%;
+		 	border-left:200px solid green;/* 宽度大小等与边栏宽度大小*/
+		 	margin-left: -200px;/* 宽度大小等与边栏宽度大小*/
+		 	float: right;
+		 	background-color: red;
+		}
+		.right4{
+			background-color: green;
+		 	width: 200px;
+		 	float: right;
+		 	margin-left: -200px;/* 宽度大小等与边栏宽度大小*/
+		}
+
+		/*我是第五种*/
+		.left5{
+			float: left;
+			width: 200px;
+			height: 100%;
+			background-color: red;
+		}
+		.right5{
+			height: 100%;
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+	<div class="a1">
+		<div class="b1 left1">我是内容</div>
+		<div class="b1 right1">我是内容</div>
+	</div>
+	<div class="a1">
+		<div class="a2-content">
+			<div class="left2 b1">我是内容</div>
+			<div class="right2 b1">我是内容</div>
+		</div>
+	</div>
+	<div class="a1">
+		<div class="left3 b1">我是内容</div>
+		<div class="right3 b1">我是内容</div>
+	</div>
+	<div class="a1 a4-content">
+		<div class="left4 b1">我是内容</div>
+		<div class="right4 b1">我是内容</div>
+	</div>
+	<div class="a1">
+		<div class="left5 b1">我是内容</div>
+		<div class="right5 b1">我是内容</div>
+	</div>
+</body>
+</html>
