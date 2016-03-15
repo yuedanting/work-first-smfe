@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="css.css"/>
+</head>
+<body>
+
+    <h3>1.点击隐藏，封装了几个函数，但是动画很挫。。</h3>
+    <div class="title">点击我</div>
+    <div class="question"></div>
+    <div class="title">点击我</div>
+    <div class="question"></div>
+    <hr/>
+
+    <ul id="ul">
+        <h3>2.拖拽,使用event delegation事件代理</h3>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <hr/>
+
+    <div id="three">模仿fadeout()
+        <h4>3.高度</h4>
+        <h3>4.宽度</h3>
+        <h3>5.透明度</h3>
+        <br/>
+        <h6>算偷懒吗23333333</h6>
+    </div>
+    <script type="text/javascript" src="global.js"></script>
+    <script type="text/javascript" src="js1.js"></script>
+    <script type="text/javascript" src="js2.js"></script>
+    <script type="text/javascript" src="js3.js"></script>
+    <script type="text/javascript">
+
+        window.onload = function(){
+            showOrHide("title","question")  //点击标题隐藏内容
+
+            move("ul","li") //拖拽
+
+            $("three").onmouseover = function(){
+                startMove(this,"height",200);
+                startMove(this,"width",800);
+                startMove(this,"opacity",1);
+            };
+
+            console.log("性能优化：1.缓存已经访问过的有关dom元素;2.使用event delegation事件代理");
+            console.log("global.js里面应该算是特征检测吧");
+        }
+
+//
+
+    </script>
+</body>
+</html>

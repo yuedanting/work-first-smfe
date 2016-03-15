@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>左边自适应</title>
+    <meta charset="utf-8">
+    <style type="text/css" >
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .one,.two,.three{
+            margin-bottom: 100px;
+        }
+        .left{
+            height: 100px;
+            background: gray;
+        }
+        .right{
+            width: 200px;
+            height: 40px;
+            background: red;
+        }
+        /*1.hhh好像都可以,兼容至ie低版本*/
+        .one{
+            position: relative;
+        }
+        .one .left{
+            margin-right: 200px;
+        }
+        .one .right{
+            position: absolute;
+            right: 0;top: 0;
+        }
+        /*2.right在html中要放在前面，ie8+*/
+        .two{
+            overflow: hidden;
+        }
+        .two .left{
+            margin-right: 200px;
+        }
+        .two .right{
+            float: right;
+        }
+        /*3.right在html中要放在前面，ie8+*/
+        .three .left{
+            overflow: hidden;
+        }
+        .three .right{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="one">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+    <div class="two">
+        <div class="right"></div>
+        <div class="left"></div>
+    </div>
+    <div class="three">
+        <div class="right"></div>
+        <div class="left"></div>
+    </div>
+</body>
+</html>
