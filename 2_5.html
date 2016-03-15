@@ -1,0 +1,70 @@
+<!DOCTYPE>
+<html>
+
+	<head>
+		<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+		<title>欢迎界面五</title>
+		<script src="js/new_file.js"></script>
+		<style type='text/css'>
+			.* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			ol,
+			ul {
+				list-style: none
+			}
+			
+			.odiv {
+				position: relative;
+			}
+			
+			.odiv ul li {
+				width: 200px;
+				height: 100px;
+				background: deeppinkpink;
+				margin-bottom: 20px;
+				border: 2px dashed gray;
+			}
+			
+			#li1 {
+				opacity: 0.3;
+				filter: alpha(opacity: 30);
+				background: deeppink;
+				text-align: center;
+				line-height: 100px;
+				font-size: 20px;
+				color: white;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id='odiv' class='odiv'>
+			<ul>
+				<li id='li1'>Welcome!</li>
+			</ul>
+		</div>
+	</body>
+	<script>
+		window.onload = function() {
+			var li1 = document.getElementById('li1');
+			li1.onmouseover = function() {
+				startMov(li1, 400, 'width', function() {
+					startMov(li1, 200, 'height', function() {
+						startMov(li1, 100, 'opacity');
+					});
+				});
+			};
+			li1.onmouseout = function() {
+				startMov(li1, 30, 'opacity', function() {
+					startMov(li1, 100, 'height', function() {
+						startMov(li1, 100, 'width');
+					});
+				});
+			};
+			li1.timer = null;
+		}
+	</script>
+</html>

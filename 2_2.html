@@ -1,0 +1,84 @@
+<!DOCTYPE>
+<html>
+
+	<head>
+		<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+		<title>欢迎界面二</title>
+		<script src="js/new_file.js"></script>
+		<style type='text/css'>
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+				color: red;
+			}
+			
+			div {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.odiv {
+				width: 1200px;
+				height: 200px;
+				background: pink;
+				position: relative;
+				left: -1200px;
+				top: 150px;
+			}
+			
+			.sdiv {
+				width: 20px;
+				height: 60px;
+				background: dodgerblue;
+				position: absolute;
+				top: 75px;
+				right: -20px;
+			}
+			
+			#btn1 {
+				position: absolute;
+				top: 50px;
+				left: 10px;
+			}
+			
+			#btn2 {
+				position: absolute;
+				top: 420px;
+				left: 10px;
+			}
+			
+			#words {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				font-size: 100px;
+				letter-spacing: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id='odiv' class='odiv'>
+			<span id="words">welcome！</span>
+			<div id='sdiv' class='sdiv'>
+			</div>
+		</div>
+		<button id="btn1">噫这是什么</button>
+		<button id="btn2">噫这又是什么</button>
+
+	</body>
+	<script>
+		window.onload = function() {
+			var odiv = document.getElementById('odiv');
+			btn1.onclick = function() {
+				startMoverTwo(0);
+			}
+			btn2.onclick = function() {
+				startMoverTwo(-1200);
+			}
+		}
+		var timer = null;
+	</script>
+
+</html>
