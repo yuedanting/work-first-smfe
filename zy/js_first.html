@@ -1,0 +1,64 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>first</title>
+	<style type="text/css">
+		body{
+			margin:0;
+			padding:0;
+		}
+		#run{
+			width:100px; height:100px; background:#06c;
+			position:absolute; border:1px solid #000;
+			left:0;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+ 		var run = document.getElementById("run");/*获取id属性值为run的元素*/
+		 var btn = document.getElementById("btn");/*获取id属性值为btn的元素*/
+		 var btn1 = document.getElementById("btn1");/*获取id属性值为btn1的元素*/
+		 var speed = 2;
+		 var timer = null;
+		 btn.onclick = function()/*为btn元素注册onclick事件处理函数。*/
+		 {
+		  startrun(300);
+		 }
+		 btn1.onclick = function/*为btn1元素注册onclick事件处理函数。*/
+		 {
+		 	startrun(300);
+		 }
+		 btn1.onclick = function()/*为btn1元素注册onclick事件处理函数。*/
+		 {
+		  startrun(0);
+		 }
+		 function startrun(target)
+		 {
+		   clearInterval(timer);
+		  timer = setInterval(function()
+		  {
+		   if(run.offsetLeft <target)
+		   {
+		    speed = 2;
+		   }else{
+		    speed = -2;
+		   }
+		   if(run.offsetLeft ==target)
+		   {
+		    clearInterval(timer);
+		   }
+		   else{
+		    run.style.left = run.offsetLeft +speed +"px";
+		   }
+		   },30)
+			 }
+			}
+	</script>
+</head>
+	<body>
+		<input id="btn1" type="button" value="运动向左">
+		<input id="btn" type="button" value="运动向右">
+		<div id="run"></div>
+	</body>
+</html>>
