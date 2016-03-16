@@ -1,0 +1,66 @@
+<!DOCTYPE>
+<html>
+
+	<head>
+		<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+		<title>欢迎界面一</title>
+		<script src="js/new_file.js"></script>
+		<style type='text/css'>
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+				color: white;
+			}
+			
+			div {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.odiv {
+				width: 800px;
+				height: 200px;
+				background: deepskyblue;
+				position: relative;
+				right: -1365px;
+				top: 100px;
+			}
+			
+			.sdiv {
+				width: 20px;
+				height: 60px;
+				background: deeppink;
+				position: absolute;
+				top: 70px;
+				left: -20px;
+			}
+			#word{
+				position: absolute;
+				top: 25%;
+				left: 30%;
+				font-size: 90px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id='odiv' class='odiv'>
+			<div id='sdiv' class='sdiv'>
+			</div>
+			<span id="word">Welcome!</span>
+		</div>
+	</body>
+	<script>
+		window.onload = function() {
+			var odiv = document.getElementById('odiv');
+			odiv.onmouseover = function() {
+				startMoverOne(0);
+			}
+			odiv.onmouseout = function() {
+				startMoverOne(-800);
+			}
+		}
+		var timer = null;
+	</script>
+	</html>

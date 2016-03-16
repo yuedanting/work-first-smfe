@@ -1,0 +1,48 @@
+<!DOCTYPE>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+		<title>欢迎界面三</title>
+		<style type="text/css">
+			#animation {
+				position: relative;
+				top: 200px;
+				left: 70px;
+				width: 1200px;
+				height: 250px;
+				background-color: black;
+				color: white;
+				font-size: 100px;
+			}
+			
+			#words {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="animation">
+			<span id="words">welcome!</span>
+		</div>
+
+	</body>
+	<script>
+		function someAnimation(args) {
+			document.getElementById("animation").style.opacity = args;
+		}
+		setInterval(function() {
+			for (var i = 0; i < 10; i++) {
+				setTimeout((function(pos) {
+					return function() {
+						someAnimation(pos);
+					}
+				})(i / 10), i * 200)
+			}
+		}, 2000);
+	</script>
+
+</html>
