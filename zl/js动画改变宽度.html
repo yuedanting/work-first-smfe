@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" contet="webkit">  <!--360使用各内核-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta content="...."  name="keywords">  关键字 -->
+	<title>div宽度变化</title>
+	<script type="text/javascript">
+		window.onload = function(){
+         var odiv = document.getElementById('div1');
+         var obtn = document.getElementById('btn')
+         var timer = "";
+         function ichange(){
+         	clearInterval(timer);
+         	timer = setInterval(function(){
+         		var i = 5;
+            if (odiv.offsetWidth >= 500) {
+            	clearInterval(timer);
+            }
+            else
+            {
+            	odiv.style.width = odiv.offsetWidth + i + 'px';
+            }
+         	},30);
+         };
+         btn.onclick = ichange;
+		};
+	</script>
+	<style type="text/css">
+     #div1{width: 50px;height: 50px;background-color: red;}
+	</style>
+</head>
+<body>
+     <button id="btn">开始变化</button>
+     <div id="div1">我会变化呢</div>
+</body>
+</html>

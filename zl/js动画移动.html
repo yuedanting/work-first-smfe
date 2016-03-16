@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" contet="webkit">  <!--360使用各内核-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- <meta content="...."  name="keywords">  关键字 -->
+	<title>js动画</title>
+	<script type="text/javascript">
+		window.onload = function(){
+        var obtn = document.getElementById('btn');
+        var timer = "";
+        function smove(){
+           var odiv = document.getElementById('div1');
+           clearInterval(timer);
+           timer = setInterval(function (){
+        	   var speed = 3;
+        	   if(odiv.offsetLeft >= 800)
+        	   {
+        		  clearInterval(timer);
+        	   }
+        	   else
+        	   {
+        		  odiv.style.left = odiv.offsetLeft + speed + 'px';
+        	   }
+
+           },30);
+           };
+        obtn.onclick = smove;
+		};
+	</script>
+	<style type="text/css">
+    #div1{width: 150px;height: 150px;background-color: red;position: absolute;top: 100px;left: 0px;}
+	</style>
+</head>
+<body>
+<button id="btn">开始运动</button>
+<div id="div1">我可以运动呢</div>
+</body>
+</html>
