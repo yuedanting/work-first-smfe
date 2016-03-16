@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="utf-8">
+    <meta name="renderer" contet="webkit">  <!--360使用各内核-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- <meta content="...."  name="keywords">  关键字 -->
+	<title>图片切换</title>
+</head>
+<style type="text/css">
+	.box1{
+		width: 500px;
+		height: 500px;
+		border: 1px solid #000;
+		position: absolute;
+		top: 60px;
+		left: 400px;
+	}
+	.box1 img{
+		width: 490px;
+		height: 436px;
+		display: block;
+		border: 5px solid #ccc;
+	}
+	#btn1{
+		display: block;
+		margin-left: 130px;
+		float: left;
+	}
+	#btn2{
+		display: block;
+		float: left;
+		margin-left: 60px;
+	}
+	span{
+		display: block;
+		margin-top: 30px;
+		font-size: 17px;
+		margin-left: 100px;
+	}
+	a{
+		width: 30px;
+		height: 30px;
+		text-align: center;
+		color: #ccc;
+		background-color:#fff; 
+		text-decoration: none;
+		font-size: 20px;
+		filter: alpha(opacity:90);
+		opacity: 0.9;
+	}
+	a:hover{
+		color: #fff;
+		background-color: #ccc;
+	}
+	#a1{
+		position: absolute;
+		top: 300px;
+		left: 410px;
+	}
+	#a2{
+		position: absolute;
+		top: 300px;
+		left: 864px;
+	}
+	#sum{
+		position: absolute;
+		top: 90px;
+		left: 520px;
+		font-size: 18px;
+		color: #000;
+		filter: alpha(opacity:50);
+		opacity: 0.5;
+	}
+	#name{
+		position: absolute;
+		top: 480px;
+		left: 500px;
+		color: #000;
+		filter: alpha(opacity:50);
+		opacity: 0.5;
+	}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+     var oa1=document.getElementById('a1');
+     var obtn1=document.getElementById('btn1');
+     var obtn2=document.getElementById('btn2');
+     var oa2=document.getElementById('a2');
+     var osum=document.getElementById('sum');
+     var oname=document.getElementById('name');
+     var oimg1=document.getElementById('img1');
+     var num = 0;
+     var arr1=["树莓作业\\jessica1.jpg","C:\\Users\\dell\\Desktop\\树莓作业\\jessica2.jpg","C:\\Users\\dell\\Desktop\\树莓作业\\jessica3.jpg","C:\\Users\\dell\\Desktop\\树莓作业\\kry2.jpg"];
+     var arr2=['jessica1','jessica2','jessica3','wow yeah'];
+     /*function cir(){
+     	 oa2.onclick=abc;
+
+     	if (num==1) {
+     	oa2.onclick=abc;
+     }
+
+     };
+     */
+     //obtn2.onclick=function (){
+     	oa2.onclick=abc;
+     	oa1.onclick=qwe;
+     //};
+     //obtn1.onclick=cir;
+     oa2.onclick=abc;
+     function abc(){
+     	//var num = 1;
+     	if (num<4) {
+     	osum.innerHTML=num + 1 + '/' + arr1.length;
+     	num++;
+     	oname.innerHTML=arr2[num - 1];
+     	oimg1.src=arr1[num - 1];
+        }
+
+     };
+    
+     function qwe(){
+     	if (num>1) {
+     	osum.innerHTML=num - 1 +'/'+ arr1.length;
+     	num--;
+     	oname.innerHTML=arr2[num];
+     	oimg1.src=arr1[num];
+     }
+     else{
+     	oname.innerHTML=arr2[num];
+     }
+     }
+     oa1.onclick=qwe;
+     
+	};
+</script>
+<body>
+    <div class="box1">
+        <!--<input type="button" value="循环模式" id="btn1"></input>
+        <input type="button" value="顺序模式" id="btn2"></input> 
+        <span>图片可从最后一张跳转到第一张循环播放</span>
+        -->
+    	<img src="树莓作业\\jessica1.jpg" id="img1">
+    </div>
+    <a href="javascript:;" id="a1"><</a>
+    <a href="javascript:;" id="a2">></a>
+    <span id="sum">1/4</span>
+    <span id="name">jessica1</span>
+</body>
+</html>

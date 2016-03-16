@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" contet="webkit">  <!--360使用各内核-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- <meta content="...."  name="keywords">  关键字 -->
+	<title>改变高度</title>
+	<script type="text/javascript">
+		window.onload = function(){
+        var odiv = document.getElementById('div1');
+         var obtn = document.getElementById('btn');
+         var timer = "";
+          function ichange(){
+         	clearInterval(timer);
+         	timer = setInterval(function(){
+         		var i = 5;
+            if (odiv.offsetHeight >= 500) {
+            	clearInterval(timer);
+            }
+            else
+            {
+            	odiv.style.height = odiv.offsetHeight + i + 'px';
+            }
+         	},30);
+         };
+         btn.onclick = ichange;
+		};
+	</script>
+	<style type="text/css">
+    #div1{width: 200px;height: 50px;background-color: red;}
+	</style>
+</head>
+<body>
+<button id="btn">开始改变</button>
+<div id="div1">改变height</div>
+</body>
+</html>
