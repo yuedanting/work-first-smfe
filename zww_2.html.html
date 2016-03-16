@@ -1,105 +1,82 @@
-<!DOCTYPE HTML>
-<!--链式运动框架运动分阶段进行当运动停止的时候执行下一个运动-->
-<html>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+
+<html xmlns='http://www.w3.org/1999/xhtml'>
+
 <head>
-    <meta charset="utf-8">
+   
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    
     <title></title>
-    <style>
-        div {
-            width:100px;
-            height:100px;
-            background:rgba(0,0,255,.3);
-            filter:alpha(opacity:30);
-            opacity:0.3;
-            margin:10px;}
+
+    <style type='text/css'>
+
+        body{margin:0;padding:0;}
+          div{margin:0;padding:0;}
+          .main{
+              width: 500px;
+              height: 400px;
+              position: relative;
+              left:0px;
+              top:100px;
+              overflow: hidden
+          }
+          .pic1{
+              width:200px;
+              height:120px;
+              background-color: antiquewhite;
+              position:absolute;
+              left:0px;
+              top:100px;
+              text-align: center;
+              color:white;
+              font-size: 30px;
+          }
     </style>
 </head>
 <body>
-<div></div>
-<div></div>
+<div class="main">
+<div id='pic1' class='pic1'>
+大
+</div>
+</div>
 <script>
-    window.onload=function ()
-    {
-        var myDiv=document.getElementsByTagName('div');//先获取div元素
-        for(var i=0;i<myDiv.length;i++){
-            myDiv[i].timer = null;
-            myDiv[i].onmouseover=function ()
-            {
-                var _this = this;
-                startMove(_this,'width',300,function(){//先是宽变300
-                    startMove(_this,'height',150,function(){//当宽变300的时候即运动结束时候开启另一个运动使其高变为300
-                        startMove(_this,'opacity',100);//使透明度变成100原来是30
-
-                    });
-
-                });
-            };
-            myDiv[i].onmouseout=function ()//当鼠标移出的时候跟移进的时候效果相反即可。
-            {
-                var _this = this;
-                startMove(_this,'opacity',30,function(){
-                    startMove(_this,'height',100,function(){
-                        startMove(_this,'width',100);
-                    });
-
-                });
-            };
-
-        };
-        //以下是运动框架的内容
-        function getStyle(obj, name)
-        {
-            if(obj.currentStyle)
-            {
-                return obj.currentStyle[name];
-            }
-            else
-            {
-                return getComputedStyle(obj, false)[name];
-            }
+    //缺点：代码重用性低
+    window.onload = function(){
+        var pic1 = document.getElementById("pic1");
+        pic1.onmouseover = function(){
+            MoveRight(700);
+            Change(this);
         }
-
-        function startMove(obj, attr, iTarget, fnEnd)//比普通的运动框架写多了一个函数说明下一阶段要执行的运动
-        {
-            clearInterval(obj.timer);
-            obj.timer=setInterval(function (){
-                var cur=0;
-
-                if(attr=='opacity')
-                {
-                    cur=Math.round(parseFloat(getStyle(obj, attr))*100);
+    };
+    var timer = null;
+        function MoveRight(target){
+            var pic1 = document.getElementById('pic1');
+            timer = setInterval(function(){
+                var speed = (target-pic1.offsetLeft)/100;
+                if(target == pic1.offsetLeft){
+                    clearInterval(timer);
+                }else{
+                    pic1.style.left = pic1.offsetLeft + speed + 'px';
                 }
-                else
-                {
-                    cur=parseInt(getStyle(obj, attr));
-                }
-
-                var speed=(iTarget-cur)/6;
-                speed=speed>0?Math.ceil(speed):Math.floor(speed);
-
-                if(cur==iTarget)
-                {
-                    clearInterval(obj.timer);
-
-                    if(fnEnd){
-                        fnEnd();
-                    }
-                }
-                else
-                {
-                    if(attr=='opacity')
-                    {
-                        obj.style.filter='alpha(opacity:'+(cur+speed)+')';
-                        obj.style.opacity=(cur+speed)/100;
-                    }
-                    else
-                    {
-                        obj.style[attr]=cur+speed+'px';
-                    }
-                }
-            }, 30);
+            },30)
+        }
+    //改变字体大小
+    function Change(obj){
+        setInterval(function(){
+            obj.style.fontSize = parseInt(getStyle(obj,'fontSize'))+1+'px';
+        },30);
+    }
+    //获取元素属性的函数
+    function getStyle(obj,attr)
+    {
+        if(obj.currentStyle){
+            return obj.currentStyle[attr];
+        }
+        else{
+            return getComputedStyle(obj,false)[attr];
         }
     }
 </script>
 </body>
 </html>
+
