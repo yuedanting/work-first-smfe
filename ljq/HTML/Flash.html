@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="hahaha">
+<head>
+    <meta charset="UTF-8">
+    <title>LeejqFirstWork</title>
+    <link rel="stylesheet" href="../CSS/Flash.css"/>
+</head>
+   <div id="eg1">
+       <p><b>第一例：</b>在 Internet Explorer 中无效。(本例是CSS。。。。不算。。。e)</p>
+       <div id="slid"></div>
+       <div id="line"></div>
+   </div>
+   <div id="eg2">
+   <p><b>第二例：</b>点击灯泡来点亮这盏灯</p>
+       <script>
+       function changeImage()
+       {
+           element=document.getElementById('myimage')
+           if (element.src.match("bulbon"))
+           {
+               element.src="../Photoes/unlight.png";
+           }
+           else
+           {
+               element.src="../Photoes/light.png";
+           }
+       }
+       </script>
+       <img id="myimage" onclick="changeImage()" src="../Photoes/unlight.png">
+   </div>
+</br></br>
+<div id="adr">
+    <a href=".." target="_blank"><b>back</b></a>
+</div>
+</body>
+</html>

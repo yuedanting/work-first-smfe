@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" contet="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>js动画</title>
+    <script type="text/javascript">
+        window.onload = function(){
+            var obotton = document.getElementById('botton');
+            var timer = "";
+            function smove(){
+                var odiv = document.getElementById('sport');
+                clearInterval(timer);
+                timer = setInterval(function (){
+                    var speed = 7;
+                    if(odiv.offsetLeft >= 880)
+                    {
+                        clearInterval(timer);
+                    }
+                    else
+                    {
+                        odiv.style.left = odiv.offsetLeft + speed + 'px';
+                    }
+
+                },30);
+
+            };
+            obotton.onclick = smove;
+        };
+    </script>
+
+    <style type="text/css">
+        #sport{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            top: 100px;
+            left: 0px;
+            border-radius: 4px;
+        }
+        #adr{
+            width:4em;
+            height:1.1em;
+            text-align: center;
+            background-color:greenyellow;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+<button id="botton">开始运动</button>
+<div id="sport"></div>
+</br></br>
+<div id="adr">
+    <a href=".." target="_blank"><b>back</b></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js动画透明度变化</title>
+<style type="text/css">
+    #animation{
+        width:300px;
+        height:200px;
+        background-color:red;
+        border-radius: 4px;
+    }
+    #adr{
+        width:4em;
+        height:1.1em;
+        text-align: center;
+        background-color:greenyellow;
+        border-radius: 4px;
+    }
+</style>
+</head>
+<body>
+<br><b>透明度变化</b></br></br></p>
+<div id="animation">
+</div>
+</br></br>
+<div id="adr">
+    <a href=".." target="_blank"><b>back</b></a>
+</div>
+<script type="text/javascript">
+    (function(){
+        function someAnimation(args){
+            document.getElementById("animation").style.opacity=args;
+        }
+        setInterval(function(){
+            for(var i=0;i<10;i++){
+                setTimeout((function(pos){
+                    return function(){
+                        someAnimation(pos);
+                    }
+                })(i/10),i*100)
+            }
+        },2000);
+    })()
+</script>
+</body>
+</html>
