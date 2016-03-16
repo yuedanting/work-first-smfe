@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>中间</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		html,body{
+			margin: 0px;
+			padding: 0px;
+		}
+		.a1{
+			color: #ffffff;
+			height: 200px;
+			background-color: orange;
+		}
+		.b1{
+			height: 200px;
+		}
+		/*第1种圣杯布局*/
+		.left1,
+	    .middle1,
+	    .right1{ 
+	        position: relative;
+	        float: left;
+	    }
+	    .a1-content{
+	        padding:0 200px 0 200px;
+	        overflow: hidden;
+	    }
+	    .left1{
+	        margin-left: -100%;
+	        left: -200px;
+	        width: 200px;
+	        background: red;
+	    }
+	    .right1{
+	        margin-left: -200px;
+	        right: -200px;
+	        width: 200px;
+	        background: green;
+	    }
+	    .middle1{ 
+	        width: 100%;
+	        background: blue;
+	        word-break: break-all;
+
+	    }
+	    /*第二种双飞翼布局*/
+	    .a2-content{
+	    	width: 100%;
+	    	float: left;
+	        min-height: 130px;
+	    }
+	    .left2,
+	    .main,
+	    .right2{ 
+	        float: left;
+	        height: 200px;
+	    }
+	    .left2{
+	    	color: #ffffff;
+	        margin-left: -100%;
+	        width: 200px;
+	        background: green;
+	    }
+	    .right2{
+	    	color: #ffffff;
+	        margin-left: -200px;
+	        width: 200px;
+	        background: red;
+	    }
+	    .middle2{ 
+	        margin-left: 200px;
+	        margin-right: 200px;
+	        height: 200px;
+	        background: blue;
+	    }
+	    /*第3种方法*/
+	    .left3,
+		.right3{
+			position: absolute;
+			top:400px;
+			width: 200px;
+			height: 200px;
+		}		 
+		.left3{
+			left:0;
+			background-color: red;
+		}
+		.right3{
+			right:0;
+			background-color: green;
+		}		 
+		.middle3{
+			margin: 0 200px;
+			height: 200px;
+			background-color: blue;
+		}
+		/*第4种方法*/
+		.left4,
+		.right4{
+			width: 200px;
+			height: 200px;
+		}
+		.left4{
+			float: left;
+			background-color: green;
+		}
+		.right4{
+			float: right;
+			background-color: red;
+		}
+		.middle4{
+			margin: 0 200px;
+			background: blue;
+			height: 200px;
+		}
+		/*第5种方法*/
+		.middle5{
+			float: left;
+			width: 100%;
+		}
+		.middle5-content{
+			margin: 0 200px;
+			height: 200px;
+			background-color: blue;
+		}
+		.left5{
+			float: left;
+			margin-left: -100%;
+			width: 200px;
+		}
+		.right5{
+			float: left;
+			margin-left: -200px;
+			width: 200px;
+		}
+		.left5 .left5-content,
+		.right5 .right5-content{
+			height: 200px;
+		}
+		.left5 .left5-content{
+			background-color: red;
+		}
+		.right5 .right5-content{
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+<div class="a1-content a1">
+    <div class="middle1 b1">我是内容</div>
+    <div class="left1 b1">我是内容</div>
+    <div class="right1 b1">我是内容</div>
+    </div>
+    <div class="a1">
+    	<div class="a2-content">
+    	<div class="middle2">我是内容</div>
+    </div> 
+    <div class="left2">我是内容</div>
+    <div class="right2">我是内容</div>
+    </div>
+<div class="a1">
+	<div class="left3">我是内容</div>
+	<div class="right3">我是内容</div>
+	<div class="middle3">我是内容</div>
+</div>
+<div class="a1">
+	<div class="left4">我是内容</div>
+	<div class="right4">我是内容</div>
+	<div class="middle4">我是内容</div>
+</div>
+<div class="a1">
+	<div class="middle5">
+		<div class="middle5-content">我是内容</div>
+	</div>
+	<div class="left5">
+		<div class="left5-content">我是内容</div>
+	</div>
+	<div class="right5">
+		<div class="right5-content">我是内容</div>
+	</div>
+</div>
+</body>
+</html>
