@@ -1,0 +1,60 @@
+body{
+    margin:0px;
+    height:auto;
+    width: 100%;
+}
+/*左边固定，右边自适应*/
+div#auto_1{
+    width: 100%;
+    height:120px;
+    background-color:lightgreen;
+}
+/*右边固定，左边自适应*/
+div#auto_2{
+    width: 100%;
+    height:120px;
+    background-color:#e0ffff;
+}
+/*右边固定，左边固定*/
+div#auto_3{
+    width: 100%;
+    height:120px;
+    background-color:#909090;
+}
+/*左边不需要特殊条件也可以固定？*/
+div.left{
+    width: 118px;
+    height:118px;
+    border: 1px solid black;
+    border-radius: 5px;
+    position: absolute;
+    left:0px;
+    background-color: red;
+}
+div.right{
+    width: 118px;
+    height:118px;
+    border: 1px solid black;
+    border-radius: 5px;
+    position: absolute;
+    left:100%;
+    margin-left:-120px;
+    background-color: red;
+}
+div#pushButton{
+    margin-left: 20px;
+    text-align: center;
+    height: 1.1em;
+    width: 5em;
+    background-color: #888;
+    border-radius: 2px;
+}
+#adr{
+    width:4em;
+    height:1.1em;
+    text-align: center;
+    background-color:greenyellow;
+    border-radius: 4px;
+}
+/*为什么跟这两个的先后有关，文件流失怎么的
+怎么在HTML中注释*/

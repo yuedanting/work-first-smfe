@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="hahaha">
+<head>
+    <meta charset="UTF-8">
+    <title>LeejqFirstWork</title>
+    <link rel="stylesheet" href="#"/>
+</head>
+<style type="text/css">
+    #pull{
+        width:125px;
+        height:100px;
+        border-radius: 3px;
+        background: greenyellow;
+        position: relative;
+        left:-120px;
+        top:0px;
+    }
+    #adr{
+        width:4em;
+        height:1.1em;
+        text-align: center;
+        background-color:greenyellow;
+        border-radius: 4px;
+    }
+
+</style>
+<script type="text/javascript">
+    window.onload =function(){
+        var oDiv = document.getElementById('pull');
+        oDiv.onmouseover = function(){
+            startMove(0);
+        }
+        oDiv.onmouseout = function () {
+            startMove(-100);
+        }
+    }
+    var timer = null;
+    function startMove(iTarget){
+        clearInterval(timer);
+        var oDiv = document.getElementById('pull');
+        timer = setInterval(function(){
+            var speed = 0;
+            if(oDiv.offsetLeft > iTarget){
+                speed = -10;
+            }
+            else{
+                speed=10;
+            }
+            if(oDiv.offsetLeft == iTarget){
+                clearInterval(timer);
+            }
+
+            else{
+                oDiv.style.lfet = oDiv.offsetLeft + speed +'px';
+            }
+        },30)
+    }
+</script>
+<body>
+        <div id="pull">
+        </div>
+        </br></br>
+        <div id="adr">
+            <a href=".." target="_blank"><b>back</b></a>
+</body>
+</html>
+
