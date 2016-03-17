@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>右边自适应</title>
+    <meta charset="utf-8">
+    <style type="text/css" >
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .one,.two,.three{
+            margin-bottom: 20px;
+        }
+        .left{
+            width: 100px;
+            height: 30px;
+            background: gray;
+        }
+        .right{
+            height: 100px;
+            background: red;
+        }
+        /*1.超过会被剪切,适合放图片、ie7+*/
+        .one .left{
+            float: left;
+        }
+        .one .right{
+            overflow: hidden;
+        }
+        /*2.right设置高度，内容无法撑开div，适合非图片、ie6+*/
+        .two .left{
+            float: left;
+        }
+        .two .right{
+            margin-left: 100px;
+        }
+        /*3.right设置高度，内容无法撑开div,适合非图片、ie7+*/
+        .three{
+            position: relative;
+        }
+        .three .left{
+            position: absolute; top:0; left:0;
+        }
+        .three .right{
+            margin-left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="one">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+    <div class="two">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+    <div class="three">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>
