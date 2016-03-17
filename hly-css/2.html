@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html" charset="utf-8">
+	<title>homework2</title>
+	<style type="text/css">
+
+	/*方案一 右边右浮动 左边设置margin-right*/
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.wrap{
+			width: 100%;
+			height: 400px;
+		}
+		.left{
+			height: 400px;
+			background-color: #6699CC;
+			margin-right: 200px;
+		}
+		.right{
+			width: 200px;
+			height: 400px;
+			background-color: #909090;
+			float: right;
+		}
+
+
+	/*方案二 右边绝对定位 左边设置margin-right*/
+		/**{
+			margin: 0;
+			padding: 0;
+		}
+		.wrap{
+			width: 100%;
+			height: 400px;
+		}
+		.left{
+			height: 400px;
+			margin-right: 200px;
+			background-color: #6699CC;
+		}
+		.right{
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 200px;
+			height: 400px;
+			background-color: #909090;
+		}*/
+
+
+	/*方案三 左右两边都绝对定位 左边加right*/
+		/**{
+			margin: 0;
+			padding: 0;
+		}
+		.wrap{
+			width: 100%;
+			height: 400px;
+		}
+		.left{
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 200px;
+			height: 400px;
+			background-color: #6699CC;
+		}
+		.right{
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 200px;
+			height: 400px;
+			background-color: #909090;
+		}*/
+
+	</style>
+</head>
+<body>
+	<div class="wrap"> 
+		<div class="right"></div>  <!-- right必须在left之前 -->
+		<div class="left"></div>
+	</div>
+</body>
+</html>
