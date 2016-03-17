@@ -1,0 +1,46 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset=" utf-8"> 
+<head>
+<title>javascript实现的简单动画</title>
+<style type="text/css">
+#mydiv
+{
+  width:50px;
+  height:50px;
+  background-color:green;
+  position:absolute;
+}
+</style>
+<script type="text/javascript"> 
+window.onload=function()/*当文档内容完全加载完毕再去执行函数中的代码。*/
+{
+  var mydiv=document.getElementById("mydiv");/*获取id属性值为mydiv的元素*/
+  var start=document.getElementById("start");/*获取id属性值为start的元素。*/
+  var stopmove=document.getElementById("stopmove");/*获取id属性值为stopmove的元素。*/
+  var x=0;
+  var flag;
+  function move()
+  {
+    x=x+1;
+    mydiv.style.left=x+"px";/*设置div的left属性值*/
+  }
+  start.onclick=function()/*为start元素注册onclick事件处理函数。*/
+  {
+    clearInterval(flag);/*停止定时器函数，一方多次单击开始按钮造成叠加效果*/
+    flag=setInterval(move,20);/*开始运动*/
+  }
+  stopmove.onclick=function()
+  {
+    clearInterval(flag);
+  }
+ 
+}
+</script>
+<body>
+<input type="button" id="start" value="开始运动" />
+<input type="button" id="stopmove" value="停止运动" />
+<div id="mydiv"></div>
+</body>
+</html>
