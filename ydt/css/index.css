@@ -1,0 +1,80 @@
+.header{
+	height: 0.806452rem;
+	background-color: #FF5A28;
+	overflow: hidden;
+}
+.imgLogo{
+	margin-left: 0.483871rem;
+	margin-top: 0.228065rem;
+	display: inline-block;
+
+}
+.inputLogo{
+	margin-right: 0.677419rem;
+	margin-top: 0.12129rem;
+	float: right;
+	display: inline-block;
+}
+.inputIn{
+	width: 2.822581rem;
+	height: 0.510387rem;
+	border-radius: 0.056129rem;
+}
+.ad{
+	height: 1.951613rem;
+	width: 100%;
+}
+.adImg{
+	height: 1.935484rem;
+	width: 100%;
+}
+.main{
+	height: 6.43871rem;
+	width: 100%;
+}
+.position{
+	margin:0 auto;
+	width: 9.032258rem;
+}
+.mainOne,.mainTwo{
+	overflow: hidden;
+	height: 3.035484rem;
+}
+.fl{
+	float: left;
+	width: 1.290323rem;
+	margin-left: 0.45rem;
+	margin-top: 0.604452rem;
+	margin-right: 0.45rem;
+}
+.into{
+	height: 0.419355rem;
+}
+.intoImg{
+	height: 0.403226rem;
+	width: 100%;
+}
+.footer{
+	height: 4.919355rem;
+	overflow: hidden;
+	width: 100%;
+}
+.footerOne,.footerTwo,.footerThree{
+	width: 2.003226rem;
+	float: left;
+	margin:0.73871rem 0.45rem 0 0.45rem; 
+}
+.h1{
+	font-size: 0.387097rem;
+	font-family: "微软雅黑";
+	line-height: 0.551613rem;
+	text-align: center;
+
+}
+.h2{
+	font-family: "微软雅黑";
+	font-size: 0.258065rem;
+	line-height: 0.39871rem;
+	text-align: justify;
+	margin-bottom: 0.322581rem
+}
