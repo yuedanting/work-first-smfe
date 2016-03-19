@@ -1,5 +1,0 @@
-[Fri Mar 18 2016 23:32:41 GMT+0800 (中国标准时间)] Layer "+": Expected Either a default asset specification or a layer asset specification but "+" found.
-[Fri Mar 18 2016 23:32:41 GMT+0800 (中国标准时间)] Layer "16素材16sucai.com": Unsupported extension: com
-[Fri Mar 18 2016 23:32:41 GMT+0800 (中国标准时间)] Layer "16素材16sucai.com": Unsupported extension: com
-[Fri Mar 18 2016 23:32:41 GMT+0800 (中国标准时间)] Layer "16素材16sucai.com": Unsupported extension: com
-[Fri Mar 18 2016 23:32:41 GMT+0800 (中国标准时间)] Layer "16素材16sucai.com": Unsupported extension: com
